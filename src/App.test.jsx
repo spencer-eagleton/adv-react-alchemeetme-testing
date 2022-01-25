@@ -11,7 +11,7 @@ test('Should render the header', async () => {
     const profileName = await screen.findByText(/vonta/i)
     expect(profileName).toBeInTheDocument()
 
- 
+
 
 
 })

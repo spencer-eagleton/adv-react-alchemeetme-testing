@@ -14,11 +14,24 @@ const user = {
 
 test('Should render the user profile', async () => {
   render(<Home user={user} />)
-
+   const { color } = user
   const header = await screen.findByAltText('header')
   expect(header).toBeInTheDocument()
-  
+
   const profileName =  screen.getByRole('heading', { name: /Vonta/i })
   expect(profileName).toBeInTheDocument()
+
+  const motto = screen.getByText(/res non verba/i)
+  expect(motto).toBeInTheDocument()
+
+  const userColor = screen.getByText(color)
+  expect(userColor).toBeInTheDocument()
+
+  const userInterests = screen.getByRole('heading', {
+    name: /interests/i
+  })
+  expect(userInterests).toBeInTheDocument()
+
+
 
 })
