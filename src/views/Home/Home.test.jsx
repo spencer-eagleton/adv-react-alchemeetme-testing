@@ -32,6 +32,7 @@ test('Should render the user profile', async () => {
   })
   expect(userInterests).toBeInTheDocument()
 
-
+  const userFaves = screen.getByRole('list')
+  expect(userFaves.children.length).toEqual(6)
 
 })
